@@ -1,2 +1,4 @@
   [1m[35m (49.4ms)[0m  [1m[35mCREATE DATABASE "rnc_development" ENCODING = 'unicode'[0m
   [1m[35m (98.5ms)[0m  [1m[35mCREATE DATABASE "rnc_test" ENCODING = 'unicode'[0m
+  [1m[35m (626.0ms)[0m  [1m[35mCREATE DATABASE "rnc_development" ENCODING = 'unicode'[0m
+  [1m[35m (316.4ms)[0m  [1m[35mCREATE DATABASE "rnc_test" ENCODING = 'unicode'[0m
