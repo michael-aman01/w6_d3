@@ -8,6 +8,6 @@ class User < ApplicationRecord
 
     has_many :artwork_shared,
         foreign_key: :viewer_id,
-        class_name: :ArtworkShare
+        class_name: :ArtworkShare,
         dependent: :destroy
 end
