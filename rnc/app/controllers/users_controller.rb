@@ -6,10 +6,9 @@ class UsersController < ApplicationController
     end
 
     def create
-        @users = User.create!(user_params)
+        @users = User.new(user_params)
         if @users.save
-            redirect_to user_url(@users)
-            #redirect_to :action => "index"
+            redirect_to user_url(@users) #returns user to show
         else
             render json: @users.errors.full_messages, status: :unprocessable_entity
         end
@@ -17,13 +16,26 @@ class UsersController < ApplicationController
     end
 
     def update
+        @user = User.find_by(id: params[:id])
+        if @user.update(user_params)
+            redirect_to user_url(@user) #returns user to show
+        else
+            render json: @user.errors.full_messages, status: :unprocessable_entity
+        end
     end
 
     def destroy
+        @user = User.find_by(id: params[:id])
+        if @user 
+            @user.destroy
+            redirect_to users_url(@users) # redirects to index
+        else 
+            render json: @users.errors.full_messages, status: :unprocessable_entity
+        end
     end
 
     def show
-        @user = User.find(params[:id])
+        @user = User.find_by(id: params[:id])
         render json: @user
     end
 
