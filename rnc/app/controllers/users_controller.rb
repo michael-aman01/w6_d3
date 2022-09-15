@@ -26,10 +26,10 @@ class UsersController < ApplicationController
 
     def destroy
         @user = User.find_by(id: params[:id])
-        if @user 
+        if @user
             @user.destroy
             redirect_to users_url(@users) # redirects to index
-        else 
+        else
             render json: @users.errors.full_messages, status: :unprocessable_entity
         end
     end

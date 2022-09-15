@@ -15,5 +15,3 @@ class Artwork < ApplicationRecord
     through: :artwork_shares,
     source: :viewer
 end
-
-
