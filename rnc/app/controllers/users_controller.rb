@@ -35,8 +35,12 @@ class UsersController < ApplicationController
     end
 
     def show
+        data = {}
         @user = User.find_by(id: params[:id])
-        render json: @user
+        data << @user
+        data << @user.artworks
+        data << @user.artwork_shared
+        render json: data
     end
 
     def edit
