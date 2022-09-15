@@ -3,7 +3,7 @@ class ArtworkSharesController < ApplicationController
     def create
         @share = ArtworkShare.new(shares_params)
         if @share.save
-            render json: "SUCESS"
+            render json: "SUCCESS"
         else
             render json: @share.errors.full_messages, status: :unprocessable_entity
         end
